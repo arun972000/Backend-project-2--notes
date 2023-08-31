@@ -1,0 +1,82 @@
+API Documentation
+Introduction
+Welcome to the API documentation for the Room Booking System. This API allows you to manage rooms, bookings, and customer details.
+
+Base URL
+The base URL for the API is: https://backend-project-2-pa4x.onrender.com/
+
+GitHub URL
+https://github.com/arun972000/Backend-project-2.git
+
+Authentication
+Authentication details go here if your API requires authentication.
+
+View Created rooms 
+Endpoint: GET //rooms
+Description: Get a list of created rooms.... "Hint" - An id will be provided for each created rooms, Use that id for booking room... just copy this id and paste it on  Endpoint: POST /bookRoom roomId:""
+
+
+Create a Room
+Endpoint: POST: /createRoom
+Description: Create a new room (Use below example json format to get valid request in body at postman).
+
+Request Body:
+roomName : Name of the room.
+seats : Number of seats available.
+amenities : List of amenities in the room.
+pricePerHour: Price per hour for the room.
+
+Example:
+json
+Copy code
+POST /createRoom
+{
+  "roomName": "Conference Room A",
+  "seats": 20,
+  "amenities": ["Projector", "Whiteboard", "WiFi"],
+  "pricePerHour": 50.00
+}
+
+
+Book a Room
+Endpoint: POST: /bookRoom
+Description: Book a room for a customer. (Use below example json format to get valid request in body at postman)
+
+
+Request Body:
+roomId: ID of the room to book.
+customerName : Name of the customer.
+date : Date of the booking (YYYY-MM-DD).
+startTime : Start time of the booking (HH:MM AM/PM).
+endTime : End time of the booking (HH:MM AM/PM).
+
+Example:
+json
+Copy code
+POST /bookRoom
+{
+  "roomId": "12345678-1234-1234-1234-123456789abc", -  To book a room just copy the particular room's "id" [from Endpoint: GET //rooms] and paste it on "roomId"
+  "customerName": "John Doe",
+  "date": "2023-09-01",
+  "startTime": "09:00 AM",
+  "endTime": "11:00 AM"
+}
+
+List Rooms with Bookings
+Endpoint: GET: /allBookings
+
+Description: Get a list of rooms along with booking status.
+
+
+
+List Customer Details 
+Endpoint: GET: //customerDetails
+Description: Get a list of customer details
+
+
+List Booking History 
+Endpoint: GET: //bookedHistory
+Description: Get a list of customer history
+
+Conclusion
+Congratulations, you now have an overview of the Room Booking System API endpoints. Feel free to explore each endpoint's details and examples to start using the API effectively.
